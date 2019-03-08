@@ -36,8 +36,6 @@ services:
     tty: true
     volumes:
       - ./kibana/config/:/usr/share/kibana/config:ro
-    ports:
-      - "5601:5601"
     networks:
       - elk
     depends_on:
@@ -49,8 +47,6 @@ services:
     tty: true
     volumes:
       - ./kibana/config/:/usr/share/kibana/config:ro
-    ports:
-      - "5601:5601"
     networks:
       - elk
     depends_on:
@@ -62,8 +58,6 @@ services:
     tty: true
     volumes:
       - ./kibana/config/:/usr/share/kibana/config:ro
-    ports:
-      - "5601:5601"
     networks:
       - elk
     depends_on:
