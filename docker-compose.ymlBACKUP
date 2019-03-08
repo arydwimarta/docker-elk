@@ -30,10 +30,9 @@ services:
     depends_on:
       - elasticsearch
 
-  kibana1:
+  kibana:
     build:
       context: kibana/
-    tty: true
     volumes:
       - ./kibana/config/:/usr/share/kibana/config:ro
     ports:
@@ -42,16 +41,6 @@ services:
       - elk
     depends_on:
       - elasticsearch
-
-  loadbalancer:
-      build: ./load-balancer
-      tty: true
-      links:
-          - kibana1
-      ports:
-          - '8080:8080'
-      networks:
-        - elk
 
 networks:
 
